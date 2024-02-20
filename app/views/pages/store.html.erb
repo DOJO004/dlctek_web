@@ -1,0 +1,18 @@
+<div>
+  <h2 class="text-4xl font-bold">Store</h2>
+  <div class="flex">
+    <% @products.each do |product|%>
+      <div class="p-1 m-4 border rounded-md">
+        <%= image_tag("https://fakeimg.pl/250x200/") %>
+        <div class="flex items-center justify-between">
+          <p class="text-2xl "><%= product.title%> </p>
+          <p class=""> $ <%= product.price%> </p>
+        </div>
+        <div class="flex items-center">
+          <p class="p-1 border rounded-md">☆</p>
+          <p class="w-full p-1 m-2 text-center border rounded-md">add to cart</p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
