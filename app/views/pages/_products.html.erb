@@ -1,0 +1,19 @@
+ 
+<div>
+  <div class="flex">
+    <p class="mr-2">Products</p>
+    <%= link_to "add product", new_product_path%>
+  </div>
+  <div class="flex">
+    <% @products.each do |product|%>
+      <%= link_to edit_product_path(product.id) do %>
+        <div class="p-2 m-4 border rounded-md">
+          <p>title: <%= product.title%> </p>
+          <p>price: <%= product.price%> </p>
+          <p>amount: <%= product.amount%> </p>
+          <p>status: <%= product.status%> </p>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
