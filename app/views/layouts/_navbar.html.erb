@@ -1,24 +1,24 @@
-<div class="flex items-center w-full p-1 border">
+<div class="relative flex items-center justify-between w-full h-full p-1 border" data-controller="burger-menu">
   <div>
     <%= link_to root_path do%>
       <%= image_tag("dlctek_logo.png", width:50)%>
     <% end %>
   </div>
-  <div >
-    <ul class="flex items-center">
-      <li class="mx-2"><%= link_to "about_us", about_us_path%></li>
-      <li class="mx-2"><%= link_to "dashboard", dashboard_path%></li>
-      <li class="mx-2"><%= link_to "store", store_path%></li>
-      <% if current_user %>
-        <li class="mx-2">
-          <h2><%= current_user.email %> </h2>
-        </li>
-        <li class="mx-2"><%= link_to "Edit Account", edit_user_registration_path %></li>
-        <li class="mx-2"><%= button_to "Logout", destroy_user_session_path, data:{ turbo: false }, method: :delete %></li>
-      <% else %>
-        <li class="mx-2"><%= link_to "Login", new_user_session_path %></li>
-        <li class="p-1 mx-2 bg-black rounded-md text-gray-50"><%= link_to "Create Account", new_user_registration_path %></li>
-      <% end %>
-    </ul>
+  <div data-action="click->burger-menu#showMenu" class="cursor-pointer ">
+    <div class="w-10 h-1 my-2 bg-gray-300 rounded-md"></div>
+    <div class="w-10 h-1 my-2 bg-gray-300 rounded-md"></div>
+    <div class="w-10 h-1 my-2 bg-gray-300 rounded-md"></div>
+  </div>
+  <div id="menu" data-burger-menu-target="menu" class="fixed right-0 w-full p-1 text-center transition-all duration-300 ease-in-out translate-x-full bg-white border rounded-md top-12 ">
+    <%= link_to "about_us", about_us_path, class:"block hover:bg-gray-300"%>
+    <%= link_to "dashboard", dashboard_path, class:"block hover:bg-gray-300"%>
+    <%= link_to "store", store_path, class:"block hover:bg-gray-300"%>
+    <% if current_user %>
+      <%= link_to "Edit Account", edit_user_registration_path, class:"block hover:bg-gray-300" %>
+      <%= link_to "Logout", destroy_user_session_path, data:{ turbo_method: :delete }, class:"block hover:bg-gray-300" %>
+    <% else %>
+      <%= link_to "Login", new_user_session_path, class:"block hover:bg-gray-300"%>
+      <%= link_to "Create Account", new_user_registration_path, class:"block hover:bg-gray-300 bg-gray-500 text-white w-fit mx-auto p-1 rounded-md" %>
+    <% end %>
   </div>
 </div>

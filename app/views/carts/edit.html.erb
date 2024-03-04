@@ -1,0 +1,13 @@
+<turbo-frame id= "<%= params[:id]%>" >
+  <%= form_with(model:@item, url:cart_path, data: { turbo: false, turbo_method: :PATCH}, class:"grid items-center grid-cols-6 gap-2") do |f| %>
+    <%= image_tag("https://fakeimg.pl/100x100/", class:"mx-auto") %>
+    <p> <%= @product.title %> </p>
+    <%= f.number_field :amount, value: @item.amount %>
+    <p> <%= @product.price %> </p>
+    <p> - </p>
+    <div>
+      <%= f.submit "Update Amount"%>
+      <%= link_to "delete", delete_cart_item_path(@item), data:{ turbo: true, turbo_method: :delete}%>
+    </div>
+  <% end %>
+</turbo-frame>

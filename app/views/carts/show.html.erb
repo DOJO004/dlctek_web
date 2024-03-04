@@ -1,0 +1,32 @@
+<div class="w-full ">
+  <p> <%= link_to "back", store_path %> </p>
+  <h2 class="text-4xl font-bold">My Cart</h2>
+  <div class="text-center">
+    <div class="grid grid-cols-6 gap-2 ">
+      <p>Image</p>
+      <p>Name</p>
+      <p>Amount</p>
+      <p>Price</p>
+      <p>Subtotal</p>
+      <p>Edit</p>
+    </div>
+    <% if @cart_items.present?%>
+      <% @cart_items.each do |item|%>
+        <turbo-frame id="<%= item.id%>">
+          <div class="grid items-center grid-cols-6 gap-2">
+            <% product = Product.find(item.product_id) %>
+            <% subtotal = product.price * item.amount %>
+            <% @total += subtotal %>
+            <%= image_tag("https://fakeimg.pl/100x100/", class:"mx-auto") %>
+            <p> <%= product.title %> </p>
+            <p> <%= item.amount %> </p>
+            <p> <%= product.price %> </p>
+            <p> $ <%= subtotal %> </p>
+            <%= link_to "edit", edit_cart_path(item.id)%>
+          </div>
+        </turbo-frame>
+      <% end %>
+    <% end %>
+    <div> Total: $ <%= @total %> </div>
+  </div>
+</div>
