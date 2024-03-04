@@ -1,0 +1,13 @@
+<div>
+  <div>
+    <%= image_tag("https://fakeimg.pl/250x200/") %>
+    <div>
+      <p class="text-xl font-bold ">title: <%= @product.title%> </p>
+      <p>price: $ <%= @product.price%> </p>
+      <p class="text-gray-500 ">stock: <%= @product.amount%> </p>
+    </div>
+  </div>
+  <div>
+    <%= link_to "add to cart", add_cart_path(id: params[:id]), data: {turbo_method: :post}, class:"w-full p-1 m-2 text-center border rounded-md"%>
+  </div>
+</div>

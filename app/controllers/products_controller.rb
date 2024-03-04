@@ -1,7 +1,10 @@
 class ProductsController < ApplicationController
-    before_action :fount_product, only: [:edit, :update, :destroy]
+    before_action :set_product, only: [:show, :edit, :update, :destroy]
     def index
       
+    end
+
+    def show
     end
 
     def new
@@ -42,7 +45,7 @@ class ProductsController < ApplicationController
         params.require(:product).permit(:title, :descript, :amount, :price, :status)
     end
 
-    def fount_product
+    def set_product
         @product = Product.find(params[:id])
     end
 end
