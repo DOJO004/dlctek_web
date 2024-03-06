@@ -11,11 +11,11 @@
   </head>
   <body >
     <%= render "layouts/navbar"%>
-    <div>
-      <p id="notice"><%= notice%> </p>
-      <p id="alert"><%= alert%> </p>
-    </div>
-    <main class="flex max-w-4xl mx-auto mt-10 ">
+    <main class="flex mx-auto mt-10 bg-white">
+      <div class="absolute top-0 left-0 ">
+        <p id="notice"><%= flash[:notice]%> </p>
+        <p id="alert"><%= flash[:alert]%> </p>
+      </div>
       <%= yield %>
     </main>
     <%= render "layouts/footer"%>

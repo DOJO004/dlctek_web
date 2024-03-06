@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_one :cart
+  validates :full_name, presence: true
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, 
          :omniauthable, omniauth_providers: [:google_oauth2]

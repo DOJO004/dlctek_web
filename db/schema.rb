@@ -44,6 +44,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_20_072036) do
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "full_name"
+    t.string "role", default: "normal", null: false
     t.string "uid"
     t.string "avatar_url"
     t.string "provider"

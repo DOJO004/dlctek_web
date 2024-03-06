@@ -1,13 +1,15 @@
-<%= form_with(model: @product, data: { turbo: false}) do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <%= f.label :descript %>
-  <%= f.text_field :descript %>
-  <%= f.label :amount %>
-  <%= f.number_field :amount %>
-  <%= f.label :price %>
-  <%= f.number_field :price %>
-  <%= f.label :status %>
-  <%= f.check_box :status %>
-  <%= f.submit%>
-<% end %>
+<div class="w-full max-w-2xl mx-auto mt-4">
+  <%= form_with(model: @product, data: { turbo: false}) do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title, class:"w-full rounded-md"%>
+    <%= f.label :descript %>
+    <%= f.text_field :descript, class:"w-full rounded-md"%>
+    <%= f.label :amount %>
+    <%= f.number_field :amount, class:"w-full rounded-md"%>
+    <%= f.label :price %>
+    <%= f.number_field :price, class:"w-full rounded-md"%>
+    <%= f.label :status %>
+    <%= f.check_box :status, size: 30%>
+    <%= f.submit%>
+  <% end %>
+</div>
