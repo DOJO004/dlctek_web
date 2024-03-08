@@ -11,10 +11,6 @@ class PagesController < ApplicationController
     @users = User.all
   end
 
-  def store
-    @products = Product.where(status: true)
-  end
-
   private
 
   def check_role

@@ -19,7 +19,7 @@
       <% if current_user && current_user.role === "admin"%>
         <%= link_to "dashboard", dashboard_path, class:"block hover:bg-gray-300 text-white"%>
       <% end %>
-      <%= link_to "store", store_path, class:"block hover:bg-gray-300 text-white"%>
+      <%= link_to "store", products_path, class:"block hover:bg-gray-300 text-white"%>
       <% if current_user %>
         <%= link_to "Edit Account", edit_user_registration_path, class:"block hover:bg-gray-300 text-white" %>
         <%= link_to "Logout", destroy_user_session_path, data:{ turbo_method: :delete }, class:"block hover:bg-gray-300 text-white" %>

@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   resources :carts
   
   get "dashboard", to: "pages#dashboard"
-  get "store", to: "pages#store"
   get "about_us", to: "pages#about_us"
 
   post "add_cart", to: "carts#add_cart"
