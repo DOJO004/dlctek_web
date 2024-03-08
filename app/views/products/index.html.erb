@@ -1,0 +1,30 @@
+<div class="w-full max-w-4xl p-4 mx-auto ">
+  <div class="flex justify-between">
+    <h2 class="text-4xl font-bold">Store</h2>
+    <% if current_user.present? && current_user.cart.present?%>
+      <%= link_to "check my cart", cart_path(id: current_user.cart.id)%>
+    <% end %>
+  </div>
+  <div class="lg:grid lg:grid-cols-3 lg:gap-2">
+    <% @products.each do |product|%>
+      <div class="p-1 my-4 border rounded-md">
+        <%= link_to product_path(product.id), class:"flex" do %>
+          <%= image_tag("https://fakeimg.pl/250x200/", width:150) %>
+          <div class="flex flex-col justify-center w-full ">
+            <div class="flex items-center justify-between lg:block">
+              <p class="ml-2 text-2xl"><%= product.title%> </p>
+              <p class="ml-2 "> $ <%= product.price%> </p>
+            </div>
+            <p class="ml-2 "><%= product.descript%> </p>
+          </div>
+        <% end %>
+        <div class="flex items-center">
+          <p class="p-1 border rounded-md">☆</p>
+          <%= link_to "add to cart", add_cart_path(id: product.id), data: {turbo_method: :post}, class:"w-full p-1 m-2 text-center border rounded-md"%>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+<div>
+</div>

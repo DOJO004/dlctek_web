@@ -1,13 +1,13 @@
-<div>
-  <div>
-    <%= image_tag("https://fakeimg.pl/250x200/") %>
-    <div>
-      <p class="text-xl font-bold ">title: <%= @product.title%> </p>
-      <p>price: $ <%= @product.price%> </p>
-      <p class="text-gray-500 ">stock: <%= @product.amount%> </p>
+<div class="max-w-4xl mx-auto my-4 lg:w-full lg:flex lg:justify-center ">
+  <%= image_tag("https://fakeimg.pl/250x200/") %>
+  <div class="w-full lg:ml-2">
+    <p class="text-2xl font-bold ">title: <%= @product.title%> </p>
+    <p><%= @product.descript %> </p>
+    <p>$ <%= @product.price%> </p>
+    <p class="text-gray-300 ">stock: <%= @product.amount%> </p>
+    <div class="flex justify-between gap-2 my-2">
+      <%= link_to "add to cart", add_cart_path(id: params[:id]), data: {turbo_method: :post}, class:"w-full p-1 text-center border rounded-md"%>
+      <p class="text-xl ">♥</p>
     </div>
-  </div>
-  <div>
-    <%= link_to "add to cart", add_cart_path(id: params[:id]), data: {turbo_method: :post}, class:"w-full p-1 m-2 text-center border rounded-md"%>
   </div>
 </div>

@@ -1,19 +1,23 @@
-<div class="p-2 pt-6 border-t-2">
+<div class="p-2 pt-6 text-white bg-black border-t-2">
   <div class="max-w-4xl mx-auto ">
-    <div class="grid gap-4 grid-row-5">
+    <div class="grid gap-4 grid-row-5 lg:grid-cols-5">
       <%= link_to root_path do%>
-        <div class="text-xs border-b-2 ">
+        <div class="text-xs border-b-2 lg:border-0 lg:text-center">
           root page
         </div>
       <% end %>
-      <%= link_to store_path do%>
-        <div class="text-xs border-b-2 ">
+      <%= link_to products_path do%>
+        <div class="text-xs border-b-2 lg:border-0 lg:text-center">
           store
         </div>
       <% end %>
-      <div class="text-xs border-b-2 ">關於川弘</div>
-      <div class="text-xs border-b-2 ">聯繫川弘</div>
-      <div class="text-xs border-b-2 ">工作機會</div>
+      <div class="text-xs border-b-2 lg:border-0 lg:text-center">
+        <%= link_to "關於川弘", about_us_path%>
+      </div>
+      <div class="text-xs border-b-2 lg:border-0 lg:text-center">聯繫川弘</div>
+      <div class="text-xs border-b-2 lg:border-0 lg:text-center">
+        <%= link_to "工作機會", "https://www.104.com.tw/company/1a2x6bmgnx?jobsource=n104bank2", target:"_blank"%>
+      </div>
     </div>
     <div class="mt-6">
       <%= image_tag("dlctek_logo.png", width:50, class:"mx-auto")%>
