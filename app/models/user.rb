@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_one :cart
+  has_many :articles
   validates :full_name, presence: true
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, 

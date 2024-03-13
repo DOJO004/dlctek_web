@@ -2,32 +2,24 @@
   <h2 class="text-2xl text-center">Dashboard</h2>
   <div class="flex items-center justify-center gap-2 my-2 border-b-2">
     <p class="cursor-pointer ">Products</p>
+    <p class="cursor-pointer ">Articles</p>
     <p class="cursor-pointer ">Users</p>
   </div>
-  <%= render "products"%>
-  <h2 class="text-2xl">Users</h2>
-  <div class="overflow-auto ">
-    <table class="w-full text-center" cellpadding="8">
-      <thead>
-        <tr>
-          <th>id</th>
-          <th>eamil</th>
-          <th>full name</th>
-          <th>role</th>
-          <th>provider</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @users.each do |user|%>
-          <tr>
-            <td><%= user.id%></td>
-            <td><%= user.email%></td>
-            <td><%= user.full_name%></td>
-            <td><%= user.role%></td>
-            <td><%= user.provider%></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
+  <%= render "products" %>
+  <div class="flex items-end justify-between gap-2 pb-2 border-b-2">
+    <h2 class="text-2xl ">Artilces</h2>
+    <%= link_to "Add article", new_article_path, class:"p-1 border rounded-md hover:bg-gray-300" %>
   </div>
+  <div>
+    <table class="w-full ">
+      <tr>
+        <th>Title</th>
+        <th>Tag</th>
+        <th>contant</th>
+      </tr>
+    </table>
+    <tbody>
+    </tbody>
+  </div>
+  <%= render "user_list" %>
 </div>
