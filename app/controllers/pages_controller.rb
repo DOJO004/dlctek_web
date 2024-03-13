@@ -9,7 +9,7 @@ class PagesController < ApplicationController
   def dashboard
     @products = Product.all
     @users = User.all
-    @articles = Article.all
+    @articles = Article.order(id: :desc).limit(10)
   end
 
   private

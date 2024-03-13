@@ -55,7 +55,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_13_015124) do
   create_table "articles", force: :cascade do |t|
     t.string "title"
     t.string "category"
-    t.integer "view_count"
+    t.integer "view_count", default: 0
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

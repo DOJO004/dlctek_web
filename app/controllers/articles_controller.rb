@@ -2,11 +2,11 @@ class ArticlesController < ApplicationController
     before_action :authenticate_user!
     before_action :set_article, only: [ :show, :edit, :update, :destroy]
     def index
-        @articles = Article.all
+        @articles = Article.all.order(id: :desc)
     end
 
     def show
-      
+        @article.update(view_count: @article.view_count + 1)
     end
 
     def new
@@ -14,7 +14,6 @@ class ArticlesController < ApplicationController
     end
 
     def create
-        debugger
         @article = current_user.articles.build(article_params)
         if @article.save
             redirect_to dashboard_path, notice: "create article success!"

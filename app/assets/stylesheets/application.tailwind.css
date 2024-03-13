@@ -47,4 +47,8 @@ form textarea{
   a {
     @apply text-blue-500 hover:border-b-2
   }
+
+  img {
+    @apply inline-block
+  }
 }
