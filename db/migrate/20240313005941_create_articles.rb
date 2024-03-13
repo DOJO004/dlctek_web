@@ -3,7 +3,6 @@ class CreateArticles < ActiveRecord::Migration[7.1]
     create_table :articles do |t|
       t.string :title
       t.string :category
-      t.text :content
       t.integer :view_count
       t.references :user, null: false, foreign_key: true
 

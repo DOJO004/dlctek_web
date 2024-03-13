@@ -1,17 +1,23 @@
 class ArticlesController < ApplicationController
-    before_action :set_article, only: [ :edit, :update, :destroy]
+    before_action :authenticate_user!
+    before_action :set_article, only: [ :show, :edit, :update, :destroy]
     def index
-        
+        @articles = Article.all
+    end
+
+    def show
+      
     end
 
     def new
-      @article = Article.new
+      @article = current_user.articles.build
     end
 
     def create
-        @article = Aritcle.new(article_params)
+        debugger
+        @article = current_user.articles.build(article_params)
         if @article.save
-            riderect_to dashboard_path, notice: "create article success!"
+            redirect_to dashboard_path, notice: "create article success!"
         else
             flash.now[:alert] = "something error, pls try again..."
             render :new
@@ -24,7 +30,7 @@ class ArticlesController < ApplicationController
 
     def update
         if @article.update(article_params)
-            riderect_to dashboard_path, notice: "update article success!"
+            redirect_to dashboard_path, notice: "update article success!"
         else
             flash.now[:alert] = "something error, pls try again..."
             render :edit
@@ -33,7 +39,7 @@ class ArticlesController < ApplicationController
 
     def destroy
       @aritcle.destroy
-      riderect_to dashboard_path
+      redirect_to dashboard_path
     end
 
     private
@@ -43,6 +49,6 @@ class ArticlesController < ApplicationController
     end
 
     def set_article
-        @aritcle = Article.find(params[:id])
+        @article = Article.find(params[:id])
     end
 end

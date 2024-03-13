@@ -1,6 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import 'actiontext.css';
+
+*{
+  @apply box-border p-0 m-0
+}
 
 form input{
   @apply block
@@ -8,9 +13,6 @@ form input{
 
 form textarea{
   @apply block
-}
-.field_with_errors{
-  @apply text-red-500
 }
 
 #notice{
@@ -21,6 +23,28 @@ form textarea{
   @apply text-red-400
 }
 
+.field_with_errors{
+  @apply text-red-500
+}
+
 .destroy_btn{
   @apply border rounded-md p-2 bg-red-300 text-white h-fit m-4
+}
+
+.trix-content {
+  h1 {
+    @apply pb-1 font-bold border-b-2;
+  }
+
+  ul {
+    @apply list-disc;
+  }
+
+  ol {
+    @apply list-decimal;
+  }
+
+  a {
+    @apply text-blue-500 hover:border-b-2
+  }
 }

@@ -9,6 +9,7 @@ class PagesController < ApplicationController
   def dashboard
     @products = Product.all
     @users = User.all
+    @articles = Article.all
   end
 
   private
