@@ -1,5 +1,9 @@
 <div class="w-full max-w-4xl p-2 mx-auto">
   <h2 class="text-4xl text-center">Articles</h2>
+  <%= search_form_for @q, class:"mx-auto w-fit flex gap-2 my-2"  do |f| %>
+    <%= f.search_field :title_cont, placeholder: "Search title...", class:"rounded-md"%>
+    <%= f.submit "search", class:"p-1 bg-gray-100 rounded-md cursor-pointer hover:bg-gray-300"%>
+  <% end %>
   <div class="grid grid-cols-1 gap-2 my-4 md:grid-cols-2 lg:grid-cols-3">
     <% @articles.each do |article|%>
       <%= link_to article_path(article.id)do%>

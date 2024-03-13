@@ -2,7 +2,8 @@ class ArticlesController < ApplicationController
     before_action :authenticate_user!
     before_action :set_article, only: [ :show, :edit, :update, :destroy]
     def index
-        @articles = Article.all.order(id: :desc)
+        @q = Article.ransack(params[:q])
+        @articles = @q.result.order(id: :desc)
     end
 
     def show
