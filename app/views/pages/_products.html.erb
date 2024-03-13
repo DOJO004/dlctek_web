@@ -1,28 +1,30 @@
-<div class="flex justify-between pb-2 border-b-2">
-  <p class="text-2xl ">Products</p>
-  <%= link_to "add product", new_product_path, class:" border p-1 rounded-md hover:bg-gray-300"%>
-</div>
-<div class="p-2 my-4 overflow-hidden bg-gray-200 rounded-md">
-  <table class="w-full text-center">
-    <thead>
-      <tr>
-        <th>title</th>
-        <th>price</th>
-        <th>amount</th>
-        <th>status</th>
-        <th>edit</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @products.each do |product|%>
+<div class="my-4">
+  <div class="flex justify-between pb-2 border-b-2">
+    <p class="text-2xl ">Products</p>
+    <%= link_to "add product", new_product_path, class:" border p-1 rounded-md hover:bg-gray-300"%>
+  </div>
+  <div class="p-2 my-4 overflow-hidden bg-gray-200 rounded-md">
+    <table class="w-full text-center">
+      <thead>
         <tr>
-          <td> <%= product.title%> </td>
-          <td> <%= product.price%> </td>
-          <td> <%= product.amount%> </td>
-          <td> <%= product.status%> </td>
-          <td><%= link_to "edit", edit_product_path(product.id) %></td>
+          <th>title</th>
+          <th>price</th>
+          <th>amount</th>
+          <th>status</th>
+          <th>edit</th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+        <% @products.each do |product|%>
+          <tr>
+            <td> <%= product.title%> </td>
+            <td> <%= product.price%> </td>
+            <td> <%= product.amount%> </td>
+            <td> <%= product.status%> </td>
+            <td><%= link_to "edit", edit_product_path(product.id) %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 </div>
