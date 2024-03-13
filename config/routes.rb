@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'pages#home'
   resources :products
   resources :carts
+  resources :articles
   
   get "dashboard", to: "pages#dashboard"
   get "about_us", to: "pages#about_us"

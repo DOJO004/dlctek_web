@@ -1,0 +1,14 @@
+<div class="w-full max-w-4xl p-4 mx-auto">
+  <div class="flex items-end gap-2 ">
+    <h2 class="text-2xl "><%= @article.title%> </h2>
+    <p class="p-1 bg-gray-200 rounded-md"><%= @article.category%> </p>
+    <div>
+      <p class="text-xs ">Author : <%= @article.user.full_name%> </p>
+      <p class="text-xs ">Views : <%= @article.view_count %> </p>
+      <p class="text-xs "><%= @article.created_at.in_time_zone("Taipei").strftime("%Y-%m-%d")%> </p>
+    </div>
+  </div>
+  <div class="p-2 my-2 rounded-md bg-gray-50">
+    <%= @article.content%>
+  </div>
+</div>

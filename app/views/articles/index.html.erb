@@ -1,0 +1,19 @@
+<div class="w-full max-w-4xl p-2 mx-auto">
+  <h2 class="text-4xl text-center">Articles</h2>
+  <div class="grid grid-cols-1 gap-2 my-4 md:grid-cols-2 lg:grid-cols-3">
+    <% @articles.each do |article|%>
+      <%= link_to article_path(article.id)do%>
+        <div class="p-2 border rounded-md hover:bg-gray-50 ">
+          <div class="flex justify-between">
+            <div class="flex items-end gap-2">
+              <p class="text-xl font-bold "><%= article.title%></p>
+              <p class="text-xs "><%= article.created_at.in_time_zone("Taipei").strftime("%Y-%m-%d")%></p>
+            </div>
+            <p class="text-xs ">Views : <%= article.view_count%></p>
+          </div>
+          <p class="p-1 text-sm bg-gray-200 rounded-md w-fit"><%= article.category%></p>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
