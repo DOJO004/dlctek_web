@@ -79,8 +79,8 @@ test:
 #
 production:
   <<: *default
-  port: <%= Rails.application.credentials.dig("POSTGRES_PORT")%>
-  host: <%= Rails.application.credentials.dig("POSTGRES_HOST")%>
-  database: <%= Rails.application.credentials.dig("POSTGRES_DATABASE")%>
-  username: <%= Rails.application.credentials.dig("POSTGRES_USER")%>
-  password: <%= Rails.application.credentials.dig("POSTGRES_PASSWORD")%>
+  port: <%= ENV["POSTGRES_PORT"]%>
+  host: <%= ENV["POSTGRES_HOST"]%>
+  database: <%= ENV["POSTGRES_DB"]%>
+  username: <%= ENV["POSTGRES_DB"]%>
+  password: <%= ENV["POSTGRES_PASSWORD"]%>
