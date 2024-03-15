@@ -13,3 +13,9 @@
  *= require_tree .
  *= require_self
  */
+
+ .noto-sans {
+    font-family: "Noto Sans TC", sans-serif;
+    font-optical-sizing: auto;
+  }
+  
