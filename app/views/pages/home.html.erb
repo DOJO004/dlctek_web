@@ -1,18 +1,15 @@
 <div class="w-full" data-controller="scroll-to-contact-us">
-  <div class="h-[34rem] mt-12 ">
-    <div class="mx-auto ">
-      <p class="mx-auto text-center text-7xl">
-        DLCTEK
-      </p>
-      <p class="text-center ">創新、專業、合作、共贏</p>
-      <%= link_to "了解更多 >", about_us_path, class:"mx-auto flex w-fit text-blue-500"%>
+  <div class=" bg-[url('home_background_1.jpg')] ">
+    <div class="relative h-screen ">
+      <div class="absolute w-full text-center -translate-x-1/2 -translate-y-[150%] top-1/2 left-1/2">
+        <p class="text-4xl transition-all duration-700 ease-in opacity-100">川弘科技有限公司</p>
+        <p class="font-mono text-2xl text-blue-900">DLCTEK</p>
+      </div>
+      <p class="absolute text-center -translate-x-1/2 bottom-10 left-1/2 animate-bounce">V</p>
     </div>
-    <div class="flex justify-center">
-      <%= image_tag "https://fakeimg.pl/300x300/"%>
-    </div>
+    <%= render "core_value"%>
+    <%= render "service_item"%>
+    <%= render "cooperation_case"%>
+    <%= render "contact_us"%>
   </div>
-  <%= render "service_item"%>
-  <%= render "core_value"%>
-  <%= render "cooperation_case"%>
-  <%= render "contact_us"%>
 </div>

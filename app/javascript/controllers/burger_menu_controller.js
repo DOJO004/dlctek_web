@@ -3,11 +3,7 @@ import { Controller } from "@hotwired/stimulus";
 // Connects to data-controller="burger-menu"
 export default class extends Controller {
   static targets = ["menu", "line1", "line2"]
-
-  connect() {
-    console.log("HI");
-  }
-
+  
   showMenu(){
     const menu = this.menuTarget;
     const line1 = this.line1Target

@@ -1,20 +1,17 @@
-<div class="fixed top-0 justify-center w-full -translate-x-1/2 bg-black left-1/2" data-controller="burger-menu">
-  <div class="flex items-center justify-between max-w-4xl mx-auto opacity-90 ">
-    <div>
+<div class="fixed top-0 z-10 justify-center w-full -translate-x-1/2 left-1/2" data-controller="burger-menu">
+  <div class="flex items-center justify-between max-w-4xl mx-auto bg-white/30 backdrop-blur-sm">
+    <div class="m-2 ">
       <%= link_to root_path do%>
-        <%= image_tag("dlctek_logo.png", width:50)%>
+        <%= image_tag("dlctek_logo.png",width:"100", class:"block")%>
       <% end %>
     </div>
-    <%= link_to root_path do%>
-      <p class="text-xl text-white">DLCTEK</p>
-    <% end %>
-    <div data-action="click->burger-menu#showMenu" class="mr-4 cursor-pointer">
+    <div data-action="click->burger-menu#showMenu" class="m-2 cursor-pointer ">
       <div class="w-8 h-1 my-2 transition-all duration-500 ease-in-out bg-red-500 rounded-md" data-burger-menu-target="line1"></div>
       <div class="w-8 h-1 my-2 transition-all duration-500 ease-in-out bg-blue-500 rounded-md" data-burger-menu-target="line2"></div>
     </div>
   </div>
   <div id="menu" data-burger-menu-target="menu" class="fixed left-0 z-10 w-full h-0 overflow-hidden text-center transition-all duration-500 ease-in-out bg-black top-10 ">
-    <div class="max-w-4xl mx-auto">
+    <div class="max-w-4xl mx-auto ">
       <%= link_to "about_us", about_us_path, class:"block hover:bg-gray-300 text-white"%>
       <%= link_to "Articles", articles_path, class:"block hover:bg-gray-300 text-white"%>
       <%= link_to "store", products_path, class:"block hover:bg-gray-300 text-white"%>
