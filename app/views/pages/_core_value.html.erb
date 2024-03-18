@@ -1,4 +1,4 @@
-<div class="min-h-screen py-12 shadow-[0_0_15px_10px_rgba(-0,0,0,0.05)] bg-gray-50 backdrop-blur-lg">
+<div data-controller="core-value" class="min-h-screen py-12 shadow-[0_0_15px_10px_rgba(-0,0,0,0.05)] bg-gray-50 backdrop-blur-lg">
   <div class="relative transition-opacity duration-1000 ease-in-out delay-300 opacity-0 target">
     <p class="text-4xl text-center text-blue-900 ">核心價值</p>
     <%= image_tag("element_core_value_title.png", width:300, class:"mx-auto")%>
@@ -39,18 +39,3 @@
     </div>
   </div>
 </div>
-<script>
-  const showElement = (entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.remove("opacity-0");
-        entry.target.classList.add("opacity-100");
-        observer.unobserve(entry.target);
-      }
-    });
-  };
-
-  const observer = new IntersectionObserver(showElement);
-  const targets = document.querySelectorAll(".target");
-  targets.forEach(target => observer.observe(target));
-</script>
