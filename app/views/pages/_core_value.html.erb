@@ -1,5 +1,5 @@
 <div class="min-h-screen py-12 shadow-[0_0_15px_10px_rgba(-0,0,0,0.05)] bg-gray-50 backdrop-blur-lg">
-  <div class="relative">
+  <div class="relative transition-opacity duration-1000 ease-in-out delay-300 opacity-0 target">
     <p class="text-4xl text-center text-blue-900 ">核心價值</p>
     <%= image_tag("element_core_value_title.png", width:300, class:"mx-auto")%>
     <div class="mx-auto w-fit">
@@ -8,14 +8,14 @@
     </div>
   </div>
   <div>
-    <div>
+    <div class="transition-opacity duration-1000 ease-in-out delay-300 opacity-0 target">
       <%= image_tag("element_core_value_1.png", width:300, class:"mx-auto")%>
       <div class="text-center text-gray-500 ">
         <p >我們的核心競爭力</p>
         <p >不斷追求技術、管理創新</p>
       </div>
     </div>
-    <div>
+    <div class="transition-opacity duration-1000 ease-in-out delay-300 opacity-0 target">
       <%= image_tag("element_core_value_2.png", width:300, class:"mx-auto")%>
       <div class="text-center text-gray-500 ">
         <p>我們的價值</p>
@@ -23,14 +23,14 @@
         <p>為客戶提供專業的產品和服務</p>
       </div>
     </div>
-    <div>
+    <div class="transition-opacity duration-1000 ease-in-out delay-300 opacity-0 target">
       <%= image_tag("element_core_value_3.png", width:300, class:"mx-auto")%>
       <div class="text-center text-gray-500 ">
         <p>我們的基礎</p>
         <p>與客戶、供應商建立良好合作關係</p>
       </div>
     </div>
-    <div class="text-center text-gray-500 ">
+    <div class="text-center text-gray-500 transition-opacity duration-1000 ease-in-out delay-300 opacity-0 target">
       <%= image_tag("element_core_value_4.png", width:300, class:"mx-auto")%>
       <div>
         <p>我們的願景</p>
@@ -39,3 +39,18 @@
     </div>
   </div>
 </div>
+<script>
+  const showElement = (entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.remove("opacity-0");
+        entry.target.classList.add("opacity-100");
+        observer.unobserve(entry.target);
+      }
+    });
+  };
+
+  const observer = new IntersectionObserver(showElement);
+  const targets = document.querySelectorAll(".target");
+  targets.forEach(target => observer.observe(target));
+</script>
