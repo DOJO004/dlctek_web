@@ -6,6 +6,10 @@ class PagesController < ApplicationController
   def about_us
   end
 
+  def service_item_card
+    
+  end
+
   def dashboard
     @products = Product.all
     @users = User.all

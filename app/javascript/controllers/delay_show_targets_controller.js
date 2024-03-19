@@ -1,6 +1,6 @@
 import { Controller } from "@hotwired/stimulus";
 
-// Connects to data-controller="core-value"
+// Connects to data-controller="delay-show-targets"
 export default class extends Controller {
   connect() {
     const showElement = (entries) => {

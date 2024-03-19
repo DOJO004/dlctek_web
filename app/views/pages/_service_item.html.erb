@@ -1,25 +1,5 @@
-<div class="min-h-screen py-4 bg-gray-400 ">
-  <div class="max-w-4xl mx-auto">
-    <div class="relative">
-      <%= image_tag("element_service_item_title.png", class:"mx-auto w-[150px] md:w-[200px]")%>
-      <p class="absolute text-4xl text-center text-blue-900 -translate-x-1/2 left-[45%] top-[33%] md:left-[48%] md:text-6xl ">服務</p>
-      <p class="absolute text-4xl text-center text-blue-900 -translate-x-1/2 left-[55%] top-[70%] md:left-[56%] md:text-6xl">項目</p>
-    </div>
-    <div class="relative flex items-center h-32">
-      <%= image_tag("element_ervice_item_card_1.png",  class:"absolute left-1/2 -translate-x-1/2 w-[300px] md:w-[500px]")%>
-      <p class="absolute text-2xl text-center left-[35%] md:left-[40%] md:text-4xl ">物聯網技術</p>
-    </div>
-    <div class="relative flex items-center h-32">
-      <%= image_tag("element_ervice_item_card_2.png",  class:"absolute left-1/2 -translate-x-1/2 w-[300px] md:w-[500px]")%>
-      <p class="absolute text-2xl text-center left-[35%] md:left-[40%] md:text-4xl">智慧能源管理</p>
-    </div>
-    <div class="relative flex items-center h-32">
-      <%= image_tag("element_ervice_item_card_3.png",  class:"absolute left-1/2 -translate-x-1/2 w-[300px] md:w-[500px]")%>
-      <p class="absolute text-2xl text-center left-[35%] md:left-[40%] md:text-4xl">自動化供料系統</p>
-    </div>
-    <div class="relative flex items-center h-32">
-      <%= image_tag("element_ervice_item_card_4.png",  class:"absolute left-1/2 -translate-x-1/2 w-[300px] md:w-[500px]")%>
-      <p class="absolute text-2xl text-center left-[35%] md:left-[40%] md:text-4xl">PLC、WEB</p>
-    </div>
-  </div>
+<div class=" relative min-h-screen py-4 bg-[url('backround_2.jpg')] bg-cover ">
+  <%= image_tag("background_moon.png", class:"absolute top-0 left-0 opacity-20")%>
+  <%= turbo_frame_tag :service_item_card, src: service_item_card_path, loading: :lazy do%>
+  <% end %>
 </div>
