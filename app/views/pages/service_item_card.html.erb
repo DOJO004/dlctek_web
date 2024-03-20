@@ -1,31 +1,75 @@
 <%= turbo_frame_tag :service_item_card do%>
   <div data-controller="delay-show-targets" class="max-w-4xl mx-auto">
-    <div class="relative my-2 mb-6 transition-opacity duration-1000 delay-300 opacity-0 md:mb-12 target">
-      <div class=" mx-auto w-[150px] h-32 md:w-[250px] md:h-48">
-        <%= render "pages/svg_images/service_item_title"%>
+    <div data-controller="show-service-item-detail">
+      <div class="relative my-2 mb-6 transition-all duration-1000 delay-300 opacity-0 md:mb-12 target">
+        <div class=" mx-auto w-[150px] h-32 md:w-[250px] md:h-48">
+          <%= render "pages/svg_images/service_item_title"%>
+        </div>
+        <p class="absolute text-4xl text-center text-blue-900 -translate-x-[80%] left-1/2 top-1/2 -translate-y-1/2 md:text-5xl ">服務</p>
+        <p class="absolute text-4xl text-center text-blue-900 -translate-x-[30%] left-1/2 bottom-0 md:text-5xl">項目</p>
       </div>
-      <p class="absolute text-4xl text-center text-blue-900 -translate-x-[80%] left-1/2 top-1/2 -translate-y-1/2 md:text-5xl ">服務</p>
-      <p class="absolute text-4xl text-center text-blue-900 -translate-x-[30%] left-1/2 bottom-0 md:text-5xl">項目</p>
-    </div>
-    <div class="relative max-w-xl mx-auto transition-opacity duration-1000 delay-300 opacity-0 cursor-pointer hover:animate-pulse target">
-      <%= render "pages/svg_images/service_item_card"%>
-      <%= image_tag("iot_skill_icon.png", class:"w-[10%] absolute top-[40%] left-[16%]")%>
-      <p class="absolute text-2xl text-center left-[35%] md:left-[38%] md:text-3xl top-1/2 -translate-y-1/2 ">物聯網技術</p>
-    </div>
-    <div class="relative max-w-xl mx-auto transition-opacity duration-1000 delay-300 opacity-0 target">
-      <%= render "pages/svg_images/service_item_card"%>
-      <%= image_tag("energy_controll_icon.png", class:"w-[10%] absolute top-[40%] left-[16%]")%>
-      <p class="absolute text-2xl text-center left-[35%] md:left-[38%] md:text-3xl top-1/2 -translate-y-1/2 ">智慧能源管理</p>
-    </div>
-    <div class="relative max-w-xl mx-auto transition-opacity duration-1000 delay-300 opacity-0 target">
-      <%= render "pages/svg_images/service_item_card"%>
-      <%= image_tag("auto_service_icon.png", class:"w-[10%] absolute top-[40%] left-[16%]")%>
-      <p class="absolute text-2xl text-center left-[35%] md:left-[38%] md:text-3xl top-1/2 -translate-y-1/2 ">自動化供料系統</p>
-    </div>
-    <div class="relative max-w-xl mx-auto transition-opacity duration-1000 delay-300 opacity-0 target">
-      <%= render "pages/svg_images/service_item_card"%>
-      <%= image_tag("plc_web_icon.png", class:"w-[10%] absolute top-[40%] left-[16%]")%>
-      <p class="absolute text-2xl text-center left-[35%] md:left-[38%] md:text-3xl top-1/2 -translate-y-1/2 ">PLC、WEB</p>
+      <div >
+        <div>
+          <div data-action="click->show-service-item-detail#show_detail" data-title="iot_skill" class="relative max-w-xl mx-auto transition-all duration-1000 delay-300 opacity-0 cursor-pointer hover:animate-pulse target">
+            <%= render "pages/svg_images/service_item_card"%>
+            <%= image_tag("iot_skill_icon.png", class:"w-[10%] absolute top-[40%] left-[16%]")%>
+            <p class="absolute text-2xl text-center left-[35%] md:left-[38%] md:text-3xl top-1/2 -translate-y-1/2 ">物聯網技術</p>
+          </div>
+          <div data-show-service-item-detail-target="iot_skill" class="grid items-center justify-center w-full h-0 mx-auto overflow-hidden transition-all duration-500">
+            <div class="p-2 mx-2 bg-gray-300 rounded-md ">
+              <p class="mb-2">了解設備運作狀態，提高生產效率。</p>
+              <li>工業設備監視</li>
+              <li>環境監視、警報通知</li>
+              <li>HMI 監視</li>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div data-action="click->show-service-item-detail#show_detail" data-title="energy_control" class="relative max-w-xl mx-auto transition-all duration-1000 delay-300 opacity-0 cursor-pointer hover:animate-pulse target">
+            <%= render "pages/svg_images/service_item_card"%>
+            <%= image_tag("energy_controll_icon.png", class:"w-[10%] absolute top-[40%] left-[16%]")%>
+            <p class="absolute text-2xl text-center left-[35%] md:left-[38%] md:text-3xl top-1/2 -translate-y-1/2 ">智慧能源管理</p>
+          </div>
+          <div data-show-service-item-detail-target="energy_control" class="grid items-center justify-center w-full h-0 mx-auto overflow-hidden transition-all duration-500">
+            <div class="p-2 mx-2 bg-gray-300 rounded-md">
+              <p class="mb-2">了解能源使用情況，進一步減少浪費。<br>
+                提高效率同時實現綠色能源管理。</p>
+              <li>監測能耗數據</li>
+              <li>用能因子分析</li>
+              <li>智慧電表安裝</li>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div data-action="click->show-service-item-detail#show_detail" data-title="auto_system"  class="relative max-w-xl mx-auto transition-all duration-1000 delay-300 opacity-0 cursor-pointer hover:animate-pulse target">
+            <%= render "pages/svg_images/service_item_card"%>
+            <%= image_tag("auto_service_icon.png", class:"w-[10%] absolute top-[40%] left-[16%]")%>
+            <p class="absolute text-2xl text-center left-[35%] md:left-[38%] md:text-3xl top-1/2 -translate-y-1/2 ">自動化供料系統</p>
+          </div>
+          <div data-show-service-item-detail-target="auto_system" class="grid items-center justify-center w-full h-0 mx-auto overflow-hidden transition-all duration-500">
+            <div class="p-2 mx-2 bg-gray-300 rounded-md">
+              <p class="mb-2">自動化技術的應用，實現生產線的高效運作。<br>
+                同時降低人力成本、安全風險。</p>
+              <li>料倉型門型機械手供料系統</li>
+              <li>料倉型關節機械手系統</li>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div data-action="click->show-service-item-detail#show_detail" data-title="plc_web" class="relative max-w-xl mx-auto transition-all duration-1000 delay-300 opacity-0 cursor-pointer hover:animate-pulse target">
+            <%= render "pages/svg_images/service_item_card"%>
+            <%= image_tag("plc_web_icon.png", class:"w-[10%] absolute top-[40%] left-[16%]")%>
+            <p class="absolute text-2xl text-center left-[35%] md:left-[38%] md:text-3xl top-1/2 -translate-y-1/2 ">PLC、WEB</p>
+          </div>
+          <div data-show-service-item-detail-target="plc_web" class="grid items-center justify-center w-full h-0 mx-auto overflow-hidden transition-all duration-500">
+            <div class="p-2 mx-2 bg-gray-300 rounded-md">
+              <p class="mb-2">擁有豐富的經驗、技術，能夠提供專業的諮詢和支持。</p>
+              <li>PLC 程式設計</li>
+              <li>WEB 客製化網站</li>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 <% end %>
