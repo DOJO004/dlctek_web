@@ -1,43 +1,6 @@
-<div data-controller="delay-show-targets" class="min-h-screen py-12 shadow-[0_0_15px_10px_rgba(-0,0,0,0.05)] bg-gray-50 backdrop-blur-lg">
+<div  class="min-h-screen py-12 shadow-[0_0_15px_10px_rgba(-0,0,0,0.05)] bg-gray-50 backdrop-blur-lg">
   <div class="max-w-4xl mx-auto ">
-    <div class="relative transition-opacity duration-1000 ease-in-out delay-300 opacity-0 target">
-      <p class="text-4xl text-center text-blue-900 md:text-6xl ">核心價值</p>
-      <%= image_tag("element_core_value_title.png", class:"mx-auto w-[200px] md:w-[300px]")%>
-      <div class="mx-auto w-fit">
-        <p class="text-sm text-gray-400 md:text-lg">不斷追求技術與管理創新</p>
-        <p class="text-sm text-gray-400 md:text-lg">良好合作關係，實現共同目標</p>
-      </div>
-    </div>
-    <div class="md:grid md:grid-cols-2 md:gap-2">
-      <div class="transition-opacity duration-1000 ease-in-out delay-300 opacity-0 target">
-        <%= image_tag("element_core_value_1.png", width:300, class:"mx-auto")%>
-        <div class="text-center text-gray-500 ">
-          <p >我們的核心競爭力</p>
-          <p >不斷追求技術、管理創新</p>
-        </div>
-      </div>
-      <div class="transition-opacity duration-1000 ease-in-out delay-300 opacity-0 target">
-        <%= image_tag("element_core_value_2.png", width:300, class:"mx-auto")%>
-        <div class="text-center text-gray-500 ">
-          <p>我們的價值</p>
-          <p>我們熟悉行業技術、市場需求</p>
-          <p>為客戶提供專業的產品和服務</p>
-        </div>
-      </div>
-      <div class="transition-opacity duration-1000 ease-in-out delay-300 opacity-0 target">
-        <%= image_tag("element_core_value_3.png", width:300, class:"mx-auto")%>
-        <div class="text-center text-gray-500 ">
-          <p>我們的基礎</p>
-          <p>與客戶、供應商建立良好合作關係</p>
-        </div>
-      </div>
-      <div class="text-center text-gray-500 transition-opacity duration-1000 ease-in-out delay-300 opacity-0 target">
-        <%= image_tag("element_core_value_4.png", width:300, class:"mx-auto")%>
-        <div>
-          <p>我們的願景</p>
-          <p>共同實現雙方共贏的目標</p>
-        </div>
-      </div>
-    </div>
+    <%= turbo_frame_tag :core_value_card, src: core_value_card_path, loading: :lazy do %>
+    <% end %>
   </div>
 </div>

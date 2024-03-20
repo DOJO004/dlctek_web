@@ -10,6 +10,10 @@ class PagesController < ApplicationController
     
   end
 
+  def core_value_card
+    
+  end
+
   def dashboard
     @products = Product.all
     @users = User.all
