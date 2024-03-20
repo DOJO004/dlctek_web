@@ -1,27 +1,29 @@
 <%= turbo_frame_tag :service_item_card do%>
   <div data-controller="delay-show-targets" class="max-w-4xl mx-auto">
-    <div class="relative h-32 my-2 mb-6 transition-opacity duration-1000 delay-300 opacity-0 md:mb-12 target">
-      <%= image_tag("element_service_item_title.png", class:"absolute top-0 left-1/2 -translate-x-1/2 w-[150px] md:w-[200px]")%>
-      <p class="absolute text-4xl text-center text-blue-900 -translate-x-1/2 left-[45%] top-[33%] md:left-[48%] md:text-6xl md:top-[40%] ">服務</p>
-      <p class="absolute text-4xl text-center text-blue-900 -translate-x-1/2 left-[55%] top-[70%] md:left-[56%] md:text-6xl md:top-[90%]">項目</p>
+    <div class="relative my-2 mb-6 transition-opacity duration-1000 delay-300 opacity-0 md:mb-12 target">
+      <div class=" mx-auto w-[150px] h-32 md:w-[250px] md:h-48">
+        <%= render "pages/svg_images/service_item_title"%>
+      </div>
+      <p class="absolute text-4xl text-center text-blue-900 -translate-x-[80%] left-1/2 top-1/2 -translate-y-1/2 md:text-5xl ">服務</p>
+      <p class="absolute text-4xl text-center text-blue-900 -translate-x-[30%] left-1/2 bottom-0 md:text-5xl">項目</p>
     </div>
     <div class="relative max-w-xl mx-auto transition-opacity duration-1000 delay-300 opacity-0 cursor-pointer hover:animate-pulse target">
-      <%= render "service_item_card"%>
+      <%= render "pages/svg_images/service_item_card"%>
       <%= image_tag("iot_skill_icon.png", class:"w-[10%] absolute top-[40%] left-[16%]")%>
       <p class="absolute text-2xl text-center left-[35%] md:left-[38%] md:text-3xl top-1/2 -translate-y-1/2 ">物聯網技術</p>
     </div>
     <div class="relative max-w-xl mx-auto transition-opacity duration-1000 delay-300 opacity-0 target">
-      <%= render "service_item_card"%>
+      <%= render "pages/svg_images/service_item_card"%>
       <%= image_tag("energy_controll_icon.png", class:"w-[10%] absolute top-[40%] left-[16%]")%>
       <p class="absolute text-2xl text-center left-[35%] md:left-[38%] md:text-3xl top-1/2 -translate-y-1/2 ">智慧能源管理</p>
     </div>
     <div class="relative max-w-xl mx-auto transition-opacity duration-1000 delay-300 opacity-0 target">
-      <%= render "service_item_card"%>
+      <%= render "pages/svg_images/service_item_card"%>
       <%= image_tag("auto_service_icon.png", class:"w-[10%] absolute top-[40%] left-[16%]")%>
       <p class="absolute text-2xl text-center left-[35%] md:left-[38%] md:text-3xl top-1/2 -translate-y-1/2 ">自動化供料系統</p>
     </div>
     <div class="relative max-w-xl mx-auto transition-opacity duration-1000 delay-300 opacity-0 target">
-      <%= render "service_item_card"%>
+      <%= render "pages/svg_images/service_item_card"%>
       <%= image_tag("plc_web_icon.png", class:"w-[10%] absolute top-[40%] left-[16%]")%>
       <p class="absolute text-2xl text-center left-[35%] md:left-[38%] md:text-3xl top-1/2 -translate-y-1/2 ">PLC、WEB</p>
     </div>

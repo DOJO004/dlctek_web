@@ -1,11 +1,13 @@
-<div class="w-full max-w-4xl p-4 mx-auto">
-  <%= image_tag "https://fakeimg.pl/1920x1080/"%>
-  <h1 class="mt-4 text-4xl font-bold">About Us</h1>
-  <p>川弘科技有限公司成立於 2023 年，是一家年輕且充滿活力的新創公司。</p>
-  <p>我們致力於工業物聯網、智慧視覺及機械手臂應用，並將最新的科技和工業應用相結合，為客戶提供高品質、創新性技術和服務，我們深信科技的力量，會為客戶帶來更多的價值和效益。</p>
-  <p class="mt-4 text-2xl font-bold">經營理念</p>
-  <p>我們的經營理念是「創新、專業、合作、共贏」。</p>
-  <p><span class="mr-2 text-xl font-bold">創新</span>是我們的核心競爭力，我們不斷追求技術創新和管理創新，以不斷提高產品和服務的競爭力。</p>
-  <p><span class="mr-2 text-xl font-bold">專業</span>是我們的價值，我們擁有一支專業的團隊，熟悉行業技術和市場需求，為客戶提供專業的產品和服務。</p>
-  <p><span class="mr-2 text-xl font-bold">合作</span>是我們的基礎，我們與客戶和供應商建立了良好的合作關係，共同實現雙方的共贏目標。</p>
+<div class="w-full max-w-4xl p-4 mx-auto bg-[url('home_background_1.jpg')] bg-cover overflow-hidden">
+  <div class="relative ">
+    <div class=" w-[250px] mx-auto md:w-[350px] md:mx-0">
+      <%= render "pages/svg_images/about_us_title"%>
+    </div>
+    <h2 class="absolute top-1/2 -translate-y-[90%] mt-4 text-4xl font-bold text-blue-800 -translate-x-[40%] left-1/2 md:text-5xl md:left-0 md:translate-x-[40%]">About Us</h2>
+  </div>
+  <%= image_tag "https://fakeimg.pl/1600x900/", class:"my-4" %>
+  <div class="relative my-4 tracking-widest break-all md:text-xl ">
+    <p class="leading-loose">川弘科技有限公司成立於 2023 年，是一家年輕且充滿活力的新創公司。<br>
+      我們致力於工業物聯網、智慧視覺及機械手臂應用，並將最新的科技和工業應用相結合，為客戶提供高品質、創新性技術和服務。我們深信科技的力量，會為客戶帶來更多的價值和效益。</p>
+  </div>
 </div>

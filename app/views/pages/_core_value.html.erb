@@ -1,8 +1,12 @@
 <div data-controller="delay-show-targets" class="min-h-screen py-12 shadow-[0_0_15px_10px_rgba(-0,0,0,0.05)] bg-gray-50 backdrop-blur-lg">
   <div class="max-w-4xl mx-auto ">
     <div class="relative transition-opacity duration-1000 ease-in-out delay-300 opacity-0 target">
-      <p class="text-4xl text-center text-blue-900 md:text-6xl ">核心價值</p>
-      <%= image_tag("element_core_value_title.png", class:"mx-auto w-[200px] md:w-[300px]")%>
+      <div class="h-20 md:h-28 ">
+        <p class="text-4xl text-center text-blue-900 md:text-5xl ">核心價值</p>
+        <div class="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 left-1/2 w-[250px] mx-auto md:w-[400px] md:-translate-y-[30%]">
+          <%= render "pages/svg_images/core_value_title"%>
+        </div>
+      </div>
       <div class="mx-auto w-fit">
         <p class="text-sm text-gray-400 md:text-lg">不斷追求技術與管理創新</p>
         <p class="text-sm text-gray-400 md:text-lg">良好合作關係，實現共同目標</p>
