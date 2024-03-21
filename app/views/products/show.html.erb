@@ -1,5 +1,5 @@
 <div class="max-w-4xl mx-auto my-4 lg:w-full lg:flex lg:justify-center ">
-  <%= image_tag("https://fakeimg.pl/250x200/") %>
+  <%= image_tag @product.main_image.variant(resize_to_limit: [150,nil]) %>
   <div class="w-full lg:ml-2">
     <p class="text-2xl font-bold ">title: <%= @product.title%> </p>
     <p><%= @product.descript %> </p>

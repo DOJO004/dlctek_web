@@ -17,7 +17,7 @@ class ProductsController < ApplicationController
         if @product.save
             redirect_to dashboard_path, notice: "add product success!"
         else
-            flash.now[:alert] = "try again"
+            flash.now[:alert] = @product.errors.full_messages
             render :new
         end
     end
@@ -29,7 +29,7 @@ class ProductsController < ApplicationController
         if @product.update(product_params)
             redirect_to dashboard_path, notice: "update product success!"
         else
-            flash.now[:alert] = "try again"
+            flash.now[:alert] = @product.errors.full_messages
             render :edit
         end
     end
@@ -42,7 +42,7 @@ class ProductsController < ApplicationController
     private
 
     def product_params
-        params.require(:product).permit(:title, :descript, :amount, :price, :status)
+        params.require(:product).permit(:title, :descript, :amount, :price, :status, :main_image)
     end
 
     def set_product

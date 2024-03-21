@@ -15,10 +15,10 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    @products = Product.all
-    @users = User.all
+    @products = Product.all.limit(10)
+    @users = User.all.limit(10)
     @q = Article.ransack(params[:q])
-    @articles = @q.result.order(id: :desc)
+    @articles = @q.result.order(id: :desc).limit(10)
   end
 
   private
