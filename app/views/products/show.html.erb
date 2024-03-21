@@ -1,8 +1,13 @@
-<div class="max-w-4xl mx-auto my-4 lg:w-full lg:flex lg:justify-center ">
-  <%= image_tag @product.main_image.variant(resize_to_limit: [150,nil]) %>
+<div class="w-full max-w-4xl p-4 mx-auto my-4 lg:flex lg:justify-center ">
   <div class="w-full lg:ml-2">
+    <div class="grid grid-cols-2 gap-2">
+      <% @images.each do |image|%>
+        <%= image_tag image, class:"w-12 "%>
+      <% end %>
+    </div>
     <p class="text-2xl font-bold ">title: <%= @product.title%> </p>
     <p><%= @product.descript %> </p>
+    48
     <p>$ <%= @product.price%> </p>
     <p class="text-gray-300 ">stock: <%= @product.amount%> </p>
     <div class="flex justify-between gap-2 my-2">

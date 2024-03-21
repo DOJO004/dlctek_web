@@ -5,6 +5,7 @@ class ProductsController < ApplicationController
     end
 
     def show
+        @images = @product.images
     end
 
     def new
@@ -42,7 +43,7 @@ class ProductsController < ApplicationController
     private
 
     def product_params
-        params.require(:product).permit(:title, :descript, :amount, :price, :status, :main_image)
+        params.require(:product).permit(:title, :descript, :amount, :price, :status, images: [])
     end
 
     def set_product
