@@ -1,20 +1,21 @@
 class Product < ApplicationRecord
     validates :title, :descript, :amount, :price, presence: true
     validate :acceptable_image
-    has_one_attached :main_image
+    has_many_attached :images
 
     private
 
     def acceptable_image
-        return unless main_image.attached?
-
-        unless main_image.blob.byte_size <= 1.megabyte
-            errors.add(:main_image, "Image needs to less 1mb")
-        end
-
-        acceptable_types = ["image/jpeg", "image/png"]
-        unless acceptable_types.include?(main_image.content_type)
-            errors.add(:main_image, "Image must be JPEG or PNG")
+        return unless images.attached?
+      
+        images.each do |image|
+          if image.byte_size > 1.megabyte
+            errors.add(:images, "Image #{image.filename} needs to be less than 1MB")
+          end
+      
+          unless ["image/jpeg", "image/png"].include?(image.content_type)
+            errors.add(:images, "Image #{image.filename} must be JPEG or PNG")
+          end
         end
     end
 end

@@ -18,7 +18,7 @@
       <tbody>
         <% @products.each do |product|%>
           <tr>
-            <td><%= image_tag product.main_image, class:"w-[50px] mx-auto"%> </td>
+            <td><%= image_tag product.images[0], class:"w-[50px] mx-auto"%> </td>
             <td>
               <%= link_to product_path(product.id) do%>
                 <%= product.title%>

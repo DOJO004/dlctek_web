@@ -1,7 +1,10 @@
-<div class="w-full max-w-2xl min-h-screen p-4 mx-auto mt-4">
+<div data-controller="preview-upload-image" class="w-full max-w-2xl min-h-screen p-4 mx-auto mt-4">
+  <div data-action="click->preview-upload-image#uploadImages" class="mx-auto cursor-pointer">
+    <p data-preview-upload-image-target="show_images">選擇圖片</p>
+    <div id="images-preview" class="flex"></div>
+  </div>
   <%= form_with(model: @product, data: { turbo: false}) do |f| %>
-    <%= f.label :main_image%>
-    <%= f.file_field :main_image%>
+    <%= f.file_field :images, multiple: true, class: "hidden", data: { preview_upload_image_target: "uploader_images"}%>
     <%= f.label :title %>
     <%= f.text_field :title, class:"w-full rounded-md"%>
     <%= f.label :descript %>
@@ -12,6 +15,6 @@
     <%= f.number_field :price, class:"w-full rounded-md"%>
     <%= f.label :status %>
     <%= f.check_box :status, size: 30%>
-    <%= f.submit%>
+    <%= f.submit "submit", class:"p-1 rounded-md bg-green-300 w-full my-4 cursor-pointer hover:bg-green-500"%>
   <% end %>
 </div>
