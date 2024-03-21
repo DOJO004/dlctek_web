@@ -1,0 +1,71 @@
+# This is the configuration used to check the rubocop source code.
+# url: https://docs.rubocop.org/rubocop/0.85/cops_style.html
+
+# 全局配置，包含一些通用設置和排除特定檔案等
+AllCops:
+  Exclude:
+    - 'config/routes.rb'
+    - 'db/schema.rb'
+  TargetRubyVersion: 3.2.2
+  TargetRailsVersion: 7.1.3
+  
+  Rails:
+    Enabled: true
+
+  # 在 Rails 中定義未知的環境，這樣 RuboCop 就知道哪些環境是合法的
+  Rails/UnknownEnv:
+    Environments:
+      - production
+      - development
+      - test
+
+# 指標度量和代碼長度檢查
+Metrics/LineLength:
+  Max: 120
+
+Metrics/ClassLength:
+  Enabled: false
+
+Metrics/ModuleLength:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false
+
+Metrics/MethodLength:
+  Max: 25
+
+Metrics/AbcSize:
+  Max: 25
+
+# 代碼風格檢查
+Style/Documentation:
+  Enabled: false
+
+Style/RedundantReturn:
+  Enabled: false
+
+Style/AsciiComments:
+  Enabled: false
+
+Style/GuardClause:
+  Enabled: false
+
+Style/IfUnlessModifier:
+  Enabled: false
+
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: consistent_comma
+
+Style/TrailingCommaInArguments:
+  EnforcedStyleForMultiline: consistent_comma
+
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: consistent_comma
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+# 字符串風格檢查，設置為雙引號
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
