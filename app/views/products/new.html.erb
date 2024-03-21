@@ -1,5 +1,7 @@
-<div class="w-full max-w-2xl mx-auto mt-4">
+<div class="w-full max-w-2xl min-h-screen p-4 mx-auto mt-4">
   <%= form_with(model: @product, data: { turbo: false}) do |f| %>
+    <%= f.label :main_image%>
+    <%= f.file_field :main_image%>
     <%= f.label :title %>
     <%= f.text_field :title, class:"w-full rounded-md"%>
     <%= f.label :descript %>

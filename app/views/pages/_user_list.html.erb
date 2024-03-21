@@ -6,21 +6,21 @@
     <table class="w-full text-center">
       <thead>
         <tr>
-          <th>id</th>
-          <th>eamil</th>
-          <th>full name</th>
-          <th>role</th>
-          <th>provider</th>
+          <th class="p-1">id</th>
+          <th class="p-1">eamil</th>
+          <th class="p-1">full name</th>
+          <th class="p-1">role</th>
+          <th class="p-1">provider</th>
         </tr>
       </thead>
       <tbody>
         <% @users.each do |user|%>
-          <tr>
-            <td><%= user.id%></td>
-            <td><%= user.email%></td>
-            <td><%= user.full_name%></td>
-            <td><%= user.role%></td>
-            <td><%= user.provider%></td>
+          <tr class=" whitespace-nowrap">
+            <td class="p-1"><%= user.id%></td>
+            <td class="p-1"><%= user.email%></td>
+            <td class="p-1"><%= user.full_name%></td>
+            <td class="p-1"><%= user.role%></td>
+            <td class="p-1"><%= user.provider%></td>
           </tr>
         <% end %>
       </tbody>

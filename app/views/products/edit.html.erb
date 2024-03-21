@@ -1,14 +1,20 @@
-<%= form_with(model: @product, data: { turbo: false, turbo_method: :patch}) do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <%= f.label :descript %>
-  <%= f.text_field :descript %>
-  <%= f.label :amount %>
-  <%= f.number_field :amount %>
-  <%= f.label :price %>
-  <%= f.number_field :price %>
-  <%= f.label :status %>
-  <%= f.check_box :status %>
-  <%= f.submit%>
-<% end %>
-<%= link_to "destroy", product_path(params[:id]), data: { turbo_confirm: "delete?", turbo_method: :delete}, class:"destroy_btn"%>
+<div class="w-full max-w-2xl min-h-screen p-4 mx-auto mt-4">
+  <%= form_with(model: @product, data: { turbo: false, turbo_method: :patch}) do |f| %>
+    <%= f.label :main_image%>
+    <%= f.file_field :main_image%>
+    <%= f.label :title %>
+    <%= f.text_field :title, class:"w-full rounded-md"%>
+    <%= f.label :descript %>
+    <%= f.text_field :descript, class:"w-full rounded-md"%>
+    <%= f.label :amount %>
+    <%= f.number_field :amount, class:"w-full rounded-md"%>
+    <%= f.label :price %>
+    <%= f.number_field :price, class:"w-full rounded-md"%>
+    <%= f.label :status %>
+    <%= f.check_box :status, size: 30%>
+    <%= f.submit "submit", class:"p-2 bg-green-300  ml-auto rounded-md w-full my-2 text-center"%>
+  <% end %>
+  <div class="w-full p-2 ml-auto text-center bg-gray-300 border rounded-md">
+    <%= link_to "delete", product_path(params[:id]), data: { turbo_confirm: "delete?", turbo_method: :delete}%>
+  </div>
+</div>

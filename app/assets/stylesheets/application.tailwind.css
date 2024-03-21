@@ -27,10 +27,6 @@ form textarea{
   @apply text-red-500
 }
 
-.destroy_btn{
-  @apply border rounded-md p-2 bg-red-300 text-white h-fit m-4
-}
-
 .trix-content {
   h1 {
     @apply pb-1 font-bold border-b-2;
