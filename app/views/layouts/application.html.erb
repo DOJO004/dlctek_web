@@ -15,10 +15,14 @@
   </head>
   <body class="noto-sans">
     <%= render "layouts/navbar"%>
-    <main class="grid mx-auto mt-10 bg-white min-h-96">
-      <div class="px-4 mt-12">
-        <p id="notice"><%= flash[:notice]%> </p>
-        <p id="alert"><%= flash[:alert]%> </p>
+    <main class="grid pt-10 mx-auto bg-white min-h-96">
+      <div class="h-0 transition-all duration-300 <%= flash[:notice] || flash[:alert] ? "translate-y-12" : "" %>">
+        <% if flash[:notice] %>
+          <p id="notice"><%= flash[:notice] %></p>
+        <% end %>
+        <% if flash[:alert] %>
+          <p id="alert"><%= flash[:alert] %></p>
+        <% end %>
       </div>
       <%= yield %>
     </main>
