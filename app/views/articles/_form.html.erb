@@ -1,0 +1,11 @@
+<%= form_with(model: @article) do |f|%>
+  <%= f.label :cover_photo%>
+  <%= f.file_field :cover_photo%>
+  <%= f.label :title%>
+  <%= f.text_field :title, class:"w-full rounded-md"%>
+  <%= f.label :category%>
+  <%= f.text_field :category, class:"w-full rounded-md"%>
+  <%= f.label :content%>
+  <%= f.rich_text_area :content%>
+  <%= f.submit%>
+<% end %>

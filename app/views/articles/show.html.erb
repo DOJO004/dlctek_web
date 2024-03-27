@@ -8,7 +8,7 @@
       <p class="text-xs "><%= @article.created_at.in_time_zone("Taipei").strftime("%Y-%m-%d")%> </p>
     </div>
   </div>
-  <div class="p-2 my-2 rounded-md bg-gray-50">
-    <%= @article.content%>
+  <div class="p-4 my-2 rounded-md bg-gray-50">
+    <%= @article.content.body%>
   </div>
 </div>

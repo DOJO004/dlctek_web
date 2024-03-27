@@ -17,7 +17,7 @@ class ArticlesController < ApplicationController
     def create
         @article = current_user.articles.build(article_params)
         if @article.save
-            redirect_to dashboard_path, notice: "create article success!"
+            redirect_to article_path(@article.id), notice: "create article success!"
         else
             flash.now[:alert] = "something error, pls try again..."
             render :new
@@ -29,7 +29,7 @@ class ArticlesController < ApplicationController
 
     def update
         if @article.update(article_params)
-            redirect_to dashboard_path, notice: "update article success!"
+            redirect_to article_path(@article.id), notice: "update article success!"
         else
             flash.now[:alert] = "something error, pls try again..."
             render :edit
@@ -44,7 +44,7 @@ class ArticlesController < ApplicationController
     private
 
     def article_params
-        params.require(:article).permit(:title, :category, :content)
+        params.require(:article).permit(:title, :category, :content, :cover_photo, images: [])
     end
 
     def set_article
