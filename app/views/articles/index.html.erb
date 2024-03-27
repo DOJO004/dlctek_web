@@ -4,7 +4,7 @@
     <%= f.search_field :title_cont, placeholder: "Search title...", class:"rounded-md"%>
     <%= f.submit "search", class:"p-1 bg-gray-100 rounded-md cursor-pointer hover:bg-gray-300"%>
   <% end %>
-  <div class="grid grid-cols-1 gap-2 my-4 md:grid-cols-2 lg:grid-cols-3">
+  <div class="grid grid-cols-1 gap-2 my-4 ">
     <% @articles.each do |article|%>
       <%= link_to article_path(article.id)do%>
         <div class="p-2 border rounded-md hover:bg-gray-50 ">
