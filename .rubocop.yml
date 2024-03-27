@@ -66,6 +66,14 @@ Style/TrailingCommaInHashLiteral:
 Style/ClassAndModuleChildren:
   Enabled: false
 
-# 字符串風格檢查，設置為雙引號
 Style/StringLiterals:
   EnforcedStyle: double_quotes
+
+Style/EmptyMethod:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Layout/IndentationWidth:
+  Width: 4

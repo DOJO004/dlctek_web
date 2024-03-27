@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
-    before_action :authenticate_user!
-    before_action :set_article, only: [ :show, :edit, :update, :destroy]
+    before_action :authenticate_user!, only: %i[new create edit update destroy]
+    before_action :set_article, only: %i[show edit update destroy]
     def index
         @q = Article.ransack(params[:q])
         @articles = @q.result.order(id: :desc)
@@ -11,7 +11,7 @@ class ArticlesController < ApplicationController
     end
 
     def new
-      @article = current_user.articles.build
+        @article = current_user.articles.build
     end
 
     def create
@@ -25,7 +25,6 @@ class ArticlesController < ApplicationController
     end
 
     def edit
-        
     end
 
     def update
@@ -38,14 +37,14 @@ class ArticlesController < ApplicationController
     end
 
     def destroy
-      @aritcle.destroy
-      redirect_to dashboard_path
+        @aritcle.destroy
+        redirect_to dashboard_path
     end
 
     private
 
     def article_params
-      params.require(:article).permit( :title, :category, :content)
+        params.require(:article).permit(:title, :category, :content)
     end
 
     def set_article
