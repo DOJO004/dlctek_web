@@ -1,6 +1,6 @@
-<div class="w-full max-w-4xl p-4 mx-auto ">
+<div class="w-full max-w-4xl min-h-screen p-4 pt-12 mx-auto ">
   <div class="flex justify-between">
-    <h2 class="text-4xl font-bold">Store</h2>
+    <h2 class="text-4xl font-bold dark:text-slate-200">Store</h2>
     <% if current_user.present? && current_user.cart.present?%>
       <%= link_to "check my cart", cart_path(id: current_user.cart.id)%>
     <% end %>

@@ -1,9 +1,10 @@
-<div class="w-full max-w-4xl p-2 mx-auto">
-  <h2 class="text-4xl text-center">Articles</h2>
-  <%= search_form_for @q, class:"mx-auto w-fit flex gap-2 my-2"  do |f| %>
-    <%= f.search_field :title_cont, placeholder: "Search title...", class:"rounded-md"%>
+<div class="w-full max-w-4xl min-h-screen p-2 pt-12 mx-auto">
+  <h2 class="text-4xl text-center dark:text-slate-200">Articles</h2>
+  <%= search_form_for @q, class:"mx-auto w-fit flex gap-2 my-2 w-full"  do |f| %>
+    <%= f.search_field :title_cont, placeholder: "Search title...", class:"rounded-md w-full"%>
     <%= f.submit "search", class:"p-1 bg-gray-100 rounded-md cursor-pointer hover:bg-gray-300"%>
   <% end %>
+  <hr class="my-4">
   <div class="grid grid-cols-1 gap-2 my-4 ">
     <% @articles.each do |article|%>
       <%= link_to article_path(article.id)do%>
