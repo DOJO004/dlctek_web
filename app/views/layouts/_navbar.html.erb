@@ -6,9 +6,16 @@
           <%= image_tag("dlctek_logo.png",width:"100", class:"block")%>
         <% end %>
       </div>
-      <div data-action="click->burger-menu#showMenu" class="m-2 cursor-pointer ">
-        <div class="w-8 h-1 my-2 transition-all duration-500 ease-in-out bg-red-500 rounded-md" data-burger-menu-target="line1"></div>
-        <div class="w-8 h-1 my-2 transition-all duration-500 ease-in-out bg-blue-500 rounded-md" data-burger-menu-target="line2"></div>
+      <div class="flex items-center gap-2">
+        <%# darkmode toggle %>
+        <span data-action="click->dark-mode#darkModeToggle" class="cursor-pointer material-symbols-outlined">
+          contrast
+        </span>
+        <%# burget menu %>
+        <div data-action="click->burger-menu#showMenu" class="m-2 cursor-pointer ">
+          <div class="w-8 h-1 my-2 transition-all duration-500 ease-in-out bg-red-500 rounded-md" data-burger-menu-target="line1"></div>
+          <div class="w-8 h-1 my-2 transition-all duration-500 ease-in-out bg-blue-500 rounded-md" data-burger-menu-target="line2"></div>
+        </div>
       </div>
     </div>
   </div>

@@ -1,6 +1,6 @@
-<div class="w-full h-screen p-2 mx-auto md:flex">
-  <div class="w-full max-w-md mx-auto md:p-4 ">
-    <h2 class="mb-4 text-4xl font-bold">Log in</h2>
+<div class="w-full h-screen max-w-4xl p-2 mx-auto md:flex">
+  <div class="w-full max-w-md mx-auto translate-y-[15%] md:p-4  ">
+    <h2 class="mb-4 text-4xl font-bold dark:text-slate-100">Log in</h2>
     <div>
       <div class="mb-4">
         <% resource_class.omniauth_providers.each do |provider| %>
@@ -11,26 +11,26 @@
       </div>
       <div class="relative my-4">
         <hr>
-        <p class="absolute px-2 -translate-x-1/2 -translate-y-1/2 bg-white left-1/2">or</p>
+        <p class="absolute px-2 -translate-x-1/2 -translate-y-1/2 bg-white left-1/2 dark:bg-black dark:text-white">or</p>
       </div>
       <%= form_with(model: resource, url: session_path(resource_name)) do |f| %>
         <div class="mb-4">
-          <%= label_tag :email %><br />
+          <%= label_tag "email", :email, class:"dark:text-slate-100" %><br />
           <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "rounded-md p-1 w-full" %>
         </div>
         <div class="mb-4">
-          <%= label_tag :password %><br />
+          <%= label_tag "password", :password, class:"dark:text-slate-100" %><br />
           <%= f.password_field :password, autocomplete: "current-password", class: "rounded-md p-1 w-full" %>
         </div>
         <div class="my-2 text-blue-600">
           <%= link_to "Forgot your password?", new_password_path(resource_name) %>
         </div>
-        <%= f.submit "Log in", class: "w-full p-1 my-4 text-white bg-black rounded-md" %>
+        <%= f.submit "Log in", class: "w-full p-1 my-4 text-white bg-black rounded-md dark:bg-slate-100 dark:text-black" %>
       <% end %>
-      <p class="text-center ">Don't have account? <%= link_to "Sign up", new_registration_path(resource_name), class:"text-blue-500" %></p>
+      <p class="text-center dark:text-slate-100 ">Don't have account? <%= link_to "Sign up", new_registration_path(resource_name), class:"text-blue-500" %></p>
     </div>
   </div>
-  <div class="items-center justify-center hidden w-full h-full bg-gray-100 md:flex">
-    <%= image_tag "dlctek_banner.png", class:" max-w-md "%>
+  <div class="items-center justify-center hidden w-full h-full bg-gray-100 md:flex dark:bg-black">
+    <%= image_tag "dlctek_banner.png", class:" max-w-md"%>
   </div>
 </div>
