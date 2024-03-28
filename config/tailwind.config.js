@@ -14,6 +14,7 @@ module.exports = {
       },
     },
   },
+  darkMode: "selector",
   plugins: [
     require('@tailwindcss/forms'),
     require('@tailwindcss/aspect-ratio'),

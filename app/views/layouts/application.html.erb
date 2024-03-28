@@ -3,7 +3,6 @@
   <head>
     <title>DlctekWeb</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
@@ -13,9 +12,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lusitana&family=Noto+Sans+TC:wght@100..900&family=Roboto:wght@300&display=swap" rel="stylesheet">
   </head>
-  <body class="noto-sans">
+  <body class="noto-sans ">
     <%= render "layouts/navbar"%>
-    <main class="grid pt-10 mx-auto bg-white min-h-96">
+    <main class="grid mx-auto bg-white min-h-96 dark:bg-black">
       <div class="h-0 transition-all duration-300 <%= flash[:notice] || flash[:alert] ? "translate-y-12" : "" %>">
         <% if flash[:notice] %>
           <p id="notice"><%= flash[:notice] %></p>
