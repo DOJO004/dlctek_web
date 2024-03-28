@@ -1,5 +1,5 @@
 class CartsController < ApplicationController
-    before_action :authenticate_user! 
+    before_action :authenticate_user!
     before_action :check_cart, only: :add_cart
 
     def show
@@ -10,7 +10,7 @@ class CartsController < ApplicationController
 
     def edit
         @item = CartItem.find(params[:id])
-        @product = Product.find(CartItem.find((params[:id])).product_id) 
+        @product = Product.find(CartItem.find(params[:id]).product_id)
         @subtotal = @product.price * @item.amount
     end
 
@@ -27,14 +27,14 @@ class CartsController < ApplicationController
     def add_cart(id: params[:id])
         @cart = current_user.cart
         cart_item = @cart.cart_items.find_by(product_id: id)
-        
+
         if cart_item.present?
             cart_item.increment!(:amount)
         else
-            @cart.cart_items.create(product_id:id, amount:1)
+            @cart.cart_items.create(product_id: id, amount: 1)
         end
 
-        redirect_to store_path, notice:"Add to cart success!"
+        redirect_to store_path, notice: "Add to cart success!"
     end
 
     def delete_cart_item(id: params[:id])
@@ -42,7 +42,6 @@ class CartsController < ApplicationController
         if @item.destroy
             redirect_to cart_path(current_user.cart.id)
         end
-        
     end
 
     private

@@ -1,10 +1,14 @@
+@import 'actiontext.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import 'actiontext.css';
 
 *{
   @apply box-border p-0 m-0
+}
+
+li{
+  @apply list-disc ml-5
 }
 
 form input{
