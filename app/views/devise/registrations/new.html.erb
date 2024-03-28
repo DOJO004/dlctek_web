@@ -3,7 +3,7 @@
     <%= image_tag "dlctek_banner.png", class:" max-w-md "%>
   </div>
   <div class="w-full mx-auto translate-y-[15%] md:p-4 ">
-    <h2 class="mb-4 text-4xl font-bold ">Sign up</h2>
+    <h2 class="mb-4 text-4xl font-bold dark:text-white ">Sign up</h2>
     <div class="mb-4">
       <% resource_class.omniauth_providers.each do |provider| %>
         <%= button_to omniauth_authorize_path(resource_name, provider), data: { turbo: false }, class: "w-full" do %>
@@ -13,27 +13,27 @@
     </div>
     <div class="relative my-4">
       <hr>
-      <p class="absolute px-2 -translate-x-1/2 -translate-y-1/2 bg-white left-1/2">or</p>
+      <p class="absolute px-2 -translate-x-1/2 -translate-y-1/2 bg-white left-1/2 dark:bg-black dark:text-white">or</p>
     </div>
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
-      <div class="field">
-        <%= f.label :full_name, "name" %><br />
+      <div>
+        <%= f.label :full_name, "Name", class:"dark:text-white" %>
         <%= f.text_field :full_name, class:" rounded-md w-full p-1" %>
       </div>
-      <div class="field">
-        <%= f.label :email %><br />
+      <div>
+        <%= f.label :email, "Email", class:"dark:text-white" %>
         <%= f.email_field :email, autofocus: true, autocomplete: "email", class:" rounded-md w-full p-1" %>
       </div>
-      <div class="field">
-        <%= f.label :password %>
+      <div>
+        <%= f.label :password, "Password", class:"dark:text-white" %>
         <% if @minimum_password_length %>
           <em>(<%= @minimum_password_length %> characters minimum)</em>
         <% end %><br />
         <%= f.password_field :password, autocomplete: "new-password", class:" rounded-md w-full p-1" %>
       </div>
-      <div class="field">
-        <%= f.label :password_confirmation %><br />
+      <div>
+        <%= f.label :password_confirmation, "Confirm password", class:"dark:text-white" %>
         <%= f.password_field :password_confirmation, autocomplete: "new-password", class:" rounded-md w-full p-1" %>
       </div>
       <%= f.submit "Sign up", class:"w-full p-1 my-4 text-white bg-black rounded-md" %>

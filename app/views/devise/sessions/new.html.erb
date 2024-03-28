@@ -11,7 +11,7 @@
       </div>
       <div class="relative my-4">
         <hr>
-        <p class="absolute px-2 -translate-x-1/2 -translate-y-1/2 bg-white left-1/2 dark:bg-black">or</p>
+        <p class="absolute px-2 -translate-x-1/2 -translate-y-1/2 bg-white left-1/2 dark:bg-black dark:text-white">or</p>
       </div>
       <%= form_with(model: resource, url: session_path(resource_name)) do |f| %>
         <div class="mb-4">
@@ -30,7 +30,7 @@
       <p class="text-center dark:text-slate-100 ">Don't have account? <%= link_to "Sign up", new_registration_path(resource_name), class:"text-blue-500" %></p>
     </div>
   </div>
-  <div class="items-center justify-center hidden w-full h-full bg-gray-100 md:flex dark:bg-slate-800">
-    <%= image_tag "dlctek_banner.png", class:" max-w-md dark:invert"%>
+  <div class="items-center justify-center hidden w-full h-full bg-gray-100 md:flex dark:bg-black">
+    <%= image_tag "dlctek_banner.png", class:" max-w-md"%>
   </div>
 </div>
